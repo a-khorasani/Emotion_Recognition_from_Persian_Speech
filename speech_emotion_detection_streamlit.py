@@ -8,29 +8,11 @@ import sounddevice as sd
 import numpy as np
 import warnings
 import torchvision
-import base64
 
 warnings.filterwarnings("ignore")
 
 st.set_page_config(page_title="تشخیص احساسات از گفتار", page_icon=":sparkles:")
 
-def get_image_as_base64(image_file):
-    with open(image_file, "rb") as image:
-        return base64.b64encode(image.read()).decode()
-
-
-# افزودن CSS برای بکگراند
-image_base64 = get_image_as_base64('img.jpg')  # مسیر تصویر خود را اینجا وارد کنید
-st.markdown(
-    f"""
-    <style>
-        [data-testid="stSidebar"] > div:first-child {{
-            background-img: url("data:image/jpg;base64, {image_base64}")
-        }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 st.markdown("""
     <style>
